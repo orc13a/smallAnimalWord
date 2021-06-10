@@ -3,7 +3,7 @@ class Animal extends World {
     x = random(0, width);
     y = random(0, height);
     image = image_;
-    allWorldParts.add(this);
+    allWorldParts.add(this); 
   }
   
   void display() {

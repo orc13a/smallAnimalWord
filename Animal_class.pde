@@ -31,7 +31,12 @@ class Animal extends World {
       moveSpeedY = (moveSpeedY * -1);
     }
     
-    x += moveSpeedX;
-    y += moveSpeedY;
+    if (overTerrain == false) {
+      x += moveSpeedX;
+      y += moveSpeedY;
+    } else {
+      x += (moveSpeedX / 3);
+      y += (moveSpeedY / 3);
+    }
   }
 }

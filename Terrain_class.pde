@@ -13,4 +13,19 @@ class Terrain extends World {
   void update() {
     
   }
+  
+  void check() {
+    for (World worldParts : allWorldParts) {
+      if ((x - (image.width/2)) < worldParts.x && (x + (image.width/2)) > worldParts.x && (y - (image.height/2)) < worldParts.y && (y + (image.height/2)) > worldParts.y) {
+        worldParts.overTerrain = true;
+        /*try {
+          
+        } catch() {
+        
+        }*/
+      } else {
+        worldParts.overTerrain = false;
+      }
+    }
+  }
 }

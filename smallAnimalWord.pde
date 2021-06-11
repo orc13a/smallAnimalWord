@@ -1,7 +1,19 @@
-float foxMoveSpeedX = 8;
-float foxMoveSpeedY = 6;
 boolean startProgram = false;
 World grassWorld;
+
+// Settings
+// - Fox
+float foxMoveSpeedX = 8;
+float foxMoveSpeedY = 6;
+// - Mouse
+float mouseMoveSpeedX = 5;
+float mouseMoveSpeedY = 3;
+// - Tree
+float treeGrowSpeed = 0.3;
+int treeMaxSize = 250;
+// - Rose
+float roseGrowSpeed = 0.3;
+int roseMaxSize = 60;
 
 void setup() {
   size(650, 650);
@@ -39,28 +51,30 @@ void keyPressed() {
     startProgram = true;
   }
   
-  if (keyCode == 'F') {
-    Fox f = new Fox(loadImage("fox.png"), foxMoveSpeedX, foxMoveSpeedY);
-    grassWorld.allWorldParts.add(f);
-  }
-  
-  if (keyCode == 'M') {
-    Mouse m = new Mouse(loadImage("mouse.png"), foxMoveSpeedX, foxMoveSpeedY);
-    grassWorld.allWorldParts.add(m); 
-  }
-  
-  if (keyCode == 'T') {
-    Tree t = new Tree(loadImage("tree.png"), 0.3, 250);
-    grassWorld.allWorldParts.add(t); 
-  }
-  
-  if (keyCode == 'R') {
-    Rose r = new Rose(loadImage("flower.png"), 0.3, 60);
-    grassWorld.allWorldParts.add(r); 
-  }
-  
-  if (keyCode == SHIFT) {
-    Mud m = new Mud(loadImage("mud.jpg"));
-    grassWorld.allWorldParts.add(m); 
+  if (startProgram == true) {
+    if (keyCode == 'F') {
+      Fox f = new Fox(loadImage("fox.png"), foxMoveSpeedX, foxMoveSpeedY);
+      grassWorld.allWorldParts.add(f);
+    }
+    
+    if (keyCode == 'M') {
+      Mouse m = new Mouse(loadImage("mouse.png"), mouseMoveSpeedX, mouseMoveSpeedY);
+      grassWorld.allWorldParts.add(m); 
+    }
+    
+    if (keyCode == 'T') {
+      Tree t = new Tree(loadImage("tree.png"), treeGrowSpeed, treeMaxSize);
+      grassWorld.allWorldParts.add(t); 
+    }
+    
+    if (keyCode == 'R') {
+      Rose r = new Rose(loadImage("flower.png"), roseGrowSpeed, roseMaxSize);
+      grassWorld.allWorldParts.add(r); 
+    }
+    
+    if (keyCode == SHIFT) {
+      Mud m = new Mud(loadImage("mud.jpg"));
+      grassWorld.allWorldParts.add(m); 
+    }
   }
 }

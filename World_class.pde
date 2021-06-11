@@ -6,9 +6,14 @@ class World {
    
   void display() {
     image(image, x, y);
+    
+    for (World worldParts : allWorldParts) {
+      worldParts.display();
+      worldParts.update();
+    }
   }
   
-  void click() {
+  void update() {
   
   }
 }

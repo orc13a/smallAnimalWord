@@ -1,3 +1,5 @@
+float foxMoveSpeedX = 8;
+float foxMoveSpeedY = 6;
 World grassWorld;
 
 void setup() {
@@ -16,15 +18,21 @@ void setup() {
 void draw() {
   clear();
   grassWorld.display();
-
-  for (World worldParts : grassWorld.allWorldParts) {
-    worldParts.display();
-  }
 }
 
 void keyPressed() {
   if (keyCode == 'F') {
-    Fox f = new Fox(loadImage("fox.png"));
+    Fox f = new Fox(loadImage("fox.png"), foxMoveSpeedX, foxMoveSpeedY);
     grassWorld.allWorldParts.add(f); 
+  }
+  
+  if (keyCode == 'M') {
+    Mouse m = new Mouse(loadImage("mouse.png"), foxMoveSpeedX, foxMoveSpeedY);
+    grassWorld.allWorldParts.add(m); 
+  }
+  
+  if (keyCode == 'T') {
+    Tree t = new Tree(loadImage("tree.png"), 0.3, 250);
+    grassWorld.allWorldParts.add(t); 
   }
 }

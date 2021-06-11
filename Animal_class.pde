@@ -3,8 +3,8 @@ class Animal extends World {
   float moveSpeedY;
   
   Animal(PImage image_, float moveSpeedX_, float moveSpeedY_) {
-    x = random(0, width);
-    y = random(0, height);
+    x = random(25, (width - 25));
+    y = random(25, (height - 25));
     image = image_;
     moveSpeedX = moveSpeedX_;
     moveSpeedY = moveSpeedY_;

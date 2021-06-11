@@ -1,6 +1,7 @@
 class Animal extends World {
   float moveSpeedX;
   float moveSpeedY;
+  boolean overTerrain = false;
   
   Animal(PImage image_, float moveSpeedX_, float moveSpeedY_) {
     x = random(25, (width - 25));
@@ -11,7 +12,7 @@ class Animal extends World {
   }
   
   void display() {
-    
+      
   }
   
   void update() {
